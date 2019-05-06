@@ -2,7 +2,9 @@ jobs:
     - job: 'docker'
       pool:
           vmImage: 'ubuntu-16.04'
-      container: $[variables.container]
+      container:
+          image: $[variables.container]
+          endpoint: $[variables.endpoint]
       strategy:
           matrix:
               CentOS5:
@@ -28,9 +30,11 @@ jobs:
               DebianBuster:
                   container: 'debian:buster'
               Manylinux1-686:
-                  container: 'quay.io/pypa/manylinux1_i686'
+                  endpoint: quay.io
+                  container: 'pypa/manylinux1_i686'
               Manylinux1-64:
-                  container: 'quay.io/pypa/manylinux1_x86_64'
+                  endpoint: quay.io/
+                  container: 'pypa/manylinux1_x86_64'
       steps:
           - script: 'echo "Success!"'
             displayName: echo in the container
