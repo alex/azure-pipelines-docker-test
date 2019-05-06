@@ -28,9 +28,9 @@ jobs:
               DebianBuster:
                   container: 'debian:buster'
               Manylinux1-686:
-                  container: 'quay.io/pypa/manylinux1_i686'
+                  container: 'quay.io/pypa/manylinux1_i686:latest'
               Manylinux1-64:
-                  container: 'quay.io/pypa/manylinux1_x86_64'
+                  container: 'quay.io/pypa/manylinux1_x86_64:latest'
       steps:
           - script: 'echo "Success!"'
             displayName: echo in the container
