@@ -4,48 +4,34 @@ jobs:
           vmImage: 'ubuntu-16.04'
       container:
           image: $[variables.container]
-          endpoint: $[variables.endpoint]
       strategy:
           matrix:
               CentOS5:
-                  endpoint: ''
                   container: 'centos:5'
               CentOS6:
-                  endpoint: ''
                   container: 'centos:6'
               CentOS7:
-                  endpoint: ''
                   container: 'centos:7'
               Ubuntu1204:
-                  endpoint: ''
                   container: 'ubuntu:12.04'
               Ubuntu1404:
-                  endpoint: ''
                   container: 'ubuntu:14.04'
               Ubuntu1604:
-                  endpoint: ''
                   container: 'ubuntu:16.04'
               Ubuntu1804:
-                  endpoint: ''
                   container: 'ubuntu:18.04'
               DebianWheezy:
-                  endpoint: ''
                   container: 'debian:wheezy'
               DebianJessie:
-                  endpoint: ''
                   container: 'debian:jessie'
               DebianStretch:
-                  endpoint: ''
                   container: 'debian:stretch'
               DebianBuster:
-                  endpoint: ''
                   container: 'debian:buster'
               Manylinux1-686:
-                  endpoint: quay.io
-                  container: 'pypa/manylinux1_i686'
+                  container: 'quay.io/pypa/manylinux1_i686'
               Manylinux1-64:
-                  endpoint: quay.io/
-                  container: 'pypa/manylinux1_x86_64'
+                  container: 'quay.io/pypa/manylinux1_x86_64'
       steps:
           - script: 'echo "Success!"'
             displayName: echo in the container
