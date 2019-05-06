@@ -27,6 +27,10 @@ jobs:
                   container: 'debian:stretch'
               DebianBuster:
                   container: 'debian:buster'
+              Manylinux1-686:
+                  container: 'quay.io/pypa/manylinux1_i686'
+              Manylinux1-64:
+                  container: 'quay.io/pypa/manylinux1_x86_64'
       steps:
           - script: 'echo "Success!"'
             displayName: echo in the container
