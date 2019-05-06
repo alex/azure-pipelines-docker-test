@@ -32,7 +32,7 @@ jobs:
               Manylinux1-64:
                   container: 'quay.io/pypa/manylinux1_x86_64:latest'
               PhusionCentOS5-32:
-                  container: 'phusion/centos-5-32'
+                  container: 'phusion/centos-5-32:latest'
       steps:
           - script: 'echo "Success!"'
             displayName: echo in the container
