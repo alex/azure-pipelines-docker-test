@@ -2,8 +2,7 @@ jobs:
     - job: 'docker'
       pool:
           vmImage: 'ubuntu-16.04'
-      container:
-          image: $[variables.container]
+      container: $[variables.container]
       strategy:
           matrix:
               CentOS5:
